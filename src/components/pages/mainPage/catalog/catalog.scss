@@ -1,0 +1,201 @@
+@import '../../../../styles/variables';
+@import '../../../../styles//mixins';
+
+.catalog {
+    padding: 100px 0;
+    @media(max-width: 575px) {
+        padding: 50px 0;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: center;//new
+        // justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        row-gap: 30px;
+        column-gap: 30px;
+        @media(max-width: 1609px) {
+            justify-content: center;
+        }
+    }
+
+    &__item {
+        position: relative;
+        overflow: hidden;
+        flex: 0 0 449px;
+        box-shadow: 0 0 7px -4px $sec-color;
+        padding: 30px 30px 40px 30px;
+        @media(max-width: 575px) {
+            flex: 0 0 260px;
+            padding: 30px 15px 100px 10px;
+        }
+        &_1 {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 20px;
+                width: 100%;
+                height: 100%;
+                background: url('../../../../assets/img/main/knife-catalog.jpg') 100% 0%/contain no-repeat;
+                z-index: -1;
+                @media(max-width: 575px) {
+                    top: 130px;
+                    right: -40px;
+                    transform: rotate(270deg);
+                }
+            }
+        }
+
+        &_2 {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 20px;
+                right: -30px;
+                width: 100%;
+                height: 100%;
+                background: url('../../../../assets/img/main/knife-dagger.jpg') 100% 0/contain no-repeat;
+                z-index: -1;
+                @media(max-width: 575px) {
+                    transform: rotate(79deg);
+                    height: 70%;
+                    top: 180px;
+                    right: 40px;
+                }
+            }
+            
+        }
+
+        &_3 {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 110px;
+                right: 0;
+                width: 100%;
+                height: 70%;
+                background: url('../../../../assets/img/main/knife-longdagger.jpg') 100% 100%/contain no-repeat;
+                z-index: -1;
+                @media(max-width: 575px) {
+                    transform: rotate(330deg);
+                    top: 240px;
+                    right: 50px;
+                }
+            }
+            
+        }
+
+        &_4 {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 70px;
+                right: -80px;
+                width: 100%;
+                height: 90%;
+                background: url('../../../../assets/img/main/knife-souvenir.jpg') 100% 0/contain no-repeat;
+                z-index: -1;
+                @media(max-width: 575px) {
+                    top: 245px;
+                    transform: scale(.7);
+                    height: 100%;
+                    right: 0px;
+                }
+            }
+        }
+
+        &_5 {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 55px;
+                right: -30px;
+                width: 100%;
+                height: 90%;
+                background: url('../../../../assets/img/main/knife-jacket.jpg') 100% 0/contain no-repeat;
+                z-index: -1;
+                @media(max-width: 575px) {
+                    transform: rotate(307deg) scale(.7);
+                    top: 210px;
+                    right: -80px;
+                }
+            }
+            
+        }
+
+        &_6 {
+            &::before {
+                content: '';
+                position: absolute;
+                top: 30px;
+                right: -30px;
+                width: 100%;
+                height: 90%;
+                background: url('../../../../assets/img/main/knife-workshop.jpg') 100% 0/contain no-repeat;
+                z-index: -1;
+                @media(max-width: 575px) {
+                    transform: scale(.6);
+                    top: 210px;
+                    right: -60px;
+                }
+            }
+            
+        }
+    }
+}
+.item-catalog {
+
+    &__title {
+        font-size: 24px;
+        line-height: 34px;
+        font-weight: 600;
+        color: #000000;
+        &::after {
+            content: '';
+            display: block;
+            width: 68px;
+            height: 2px;
+            background-color: $main-color;
+            margin: 15px 0 0 0;
+            @media(max-width: 575px) {
+                margin: 15px auto 0 auto;
+            }
+        }
+        @media(max-width: 575px) {
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    &__elem {
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        font-size: 18px;
+        line-height: 34px;
+        padding-left: 25px;
+        &::before {
+            content: url('../../../../assets/icons/main/bullet.svg');
+            position: absolute;
+            top: -3px;
+            left: 0;
+            @media(max-width: 575px) {
+                left: 40px;
+            }
+        }
+        @media(max-width: 575px) {
+            justify-content: center;
+            padding-left: 60px;
+        }
+        
+    }
+}

@@ -1,0 +1,28 @@
+@import "../../../styles/variables";
+
+.search-results {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 0;
+    &__title {
+        text-align: center;
+        color: $fourth-color;
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 350px);
+        justify-content: center;
+        gap: 40px;
+        list-style: none;
+        @media(max-width: 575px) {
+            grid-template-columns: repeat(auto-fit, 280px);
+        }
+    }
+
+    &__item {
+        box-shadow: 0 0 10px 0 $fourth-color;
+        
+    }
+}

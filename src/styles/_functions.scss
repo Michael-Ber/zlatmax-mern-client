@@ -1,0 +1,5 @@
+@use "sass:math";
+@function percent($x, $y) {
+    $result: math.div($x * 100%, $y);
+    @return $result;
+}

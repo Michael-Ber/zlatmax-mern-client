@@ -1,0 +1,26 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 500px;
+    height: 400px;
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s all ease;
+    z-index: 1000;
+    &__message {
+        font-size: 22px;
+    }
+
+    &__close {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 28px;
+        cursor: pointer;
+    }
+}

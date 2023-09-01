@@ -1,0 +1,9 @@
+@mixin montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+@mixin link-hover {
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}

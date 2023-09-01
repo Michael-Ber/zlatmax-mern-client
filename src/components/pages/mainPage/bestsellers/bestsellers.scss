@@ -1,0 +1,197 @@
+@import '../../../../styles/variables';
+
+.bestsellers, .common {
+    position: relative;
+
+    @media(max-width: 575px) {
+        padding-bottom: 30px;
+    }
+    
+    &__container {
+        max-width: calc($container-mw + 30px);
+        margin: 0 auto;
+        @media(max-width: 1609px) {
+            max-width: calc(100% - 50px);
+        }
+        @media(max-width: 1199px) {
+            max-width: calc(960px + 30px);
+        }
+        @media(max-width: 991px) {
+            max-width: calc(720px + 30px);
+        }
+        @media(max-width: 767px) {
+            max-width: calc(540px + 30px);
+        }
+        @media(max-width: 575px) {
+            width: calc(100%);
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @media(max-width: 575px) {
+            justify-content: center;
+        }
+    }
+
+    &__title {
+        color: $sec-color;
+        @media(max-width: 575px) {
+            font-size: 24px;
+        }
+    }
+
+    &__link {
+        @media(max-width: 575px) {
+            display: none;
+        }
+        &_bottom {
+            @media(max-width: 575px) {
+                display: block;
+                text-align: center;
+            }
+            @media(min-width: 576px) {
+                display: none;
+            }
+        }
+    }
+    &__slider {
+        overflow: hidden;
+        margin: 40px -20px -20px -20px;
+        padding: 20px 20px; 
+        @media(max-width: 575px) {
+            margin: 30px auto 0 auto;
+        }
+
+        .swiper-button-next, .swiper-button-prev {
+            display: none;
+        }
+
+        .swiper-pagination {
+            text-align: center;
+            top: 98% !important;
+            .swiper-pagination-bullet {
+                position: relative;
+                opacity: 1;
+                background: $fourth-color;
+                width: 18px;
+                height: 3px;
+                border-radius: 0;
+                &::before { // увеличил зону нажатия кнопок карусели
+                    content: '';
+                    position: absolute;
+                    bottom: 100%;
+                    left: 0;
+                    display: block;
+                    width: 18px;
+                    height: 8px;
+                    background-color: transparent;
+                }
+                &::after { // увеличил зону нажатия кнопок карусели
+                    content: '';
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    display: block;
+                    width: 18px;
+                    height: 8px;
+                    background-color: transparent;
+                }
+                &-active {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        left: -8px;
+                        width: 10px;
+                        height: 10px;
+                        border-radius: 100%;
+                        background-color: $main-color;
+                        transform: translateY(-50%);
+                    }
+                    background-color: $main-color;
+                }
+            }
+        }
+    }
+}
+.section-title {
+    font-size: 30px;
+    line-height: 46px;
+    font-weight: 700;
+}
+.link-more {
+    font-size: 18px;
+    line-height: 46px;
+    color: rgba($sec-color, .58);
+    text-decoration: none;
+    &:hover {
+        color: $main-color;
+    }
+    &::after {
+        content: url('../../../../assets/icons/main/arrow-bottom.svg');
+        display: inline-block;
+        transform: rotate(270deg);
+        margin-left: 5px;
+    }
+}
+.slide-common {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    flex: 0 0 100%;
+}
+
+.footer-slide {
+
+    &__link {
+        text-decoration: none;
+        &:hover {
+            svg {
+                path {
+                    transition: .2s all;
+                    fill: $main-color;
+                }
+            }
+        }
+        & + & {
+            margin-left: 15px;
+        }
+    }
+
+    &__btn {
+        margin-left: 15px;
+        background-color: transparent;
+        &:hover {
+            background-color: transparent;
+            svg {
+                path {
+                    transition: .2s all;
+                    fill: $main-color;
+                }
+            }
+        }
+        &_active {
+            svg {
+                path {
+                    transition: .2s all;
+                    fill: $main-color;
+                }
+            }
+        }
+    }
+}
+
+.no-goods {
+    font-size: 22px;
+    text-align: center;
+}
+
+@keyframes moveSlider {
+    0% {right: 100%;}
+    100% {right: calc(0% - 10px)} 
+}

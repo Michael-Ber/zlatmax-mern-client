@@ -1,0 +1,48 @@
+@import '../../../styles/variables';
+
+.register {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 50px 0;
+    text-align: center;
+    
+    &__title {
+        margin-bottom: 20px;
+    }
+    &__login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+    &__link {
+        font-size: 18px;
+        color: rgb(0, 0, 255);
+        text-decoration: none;
+        transition: .2s all ease;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__input {
+        width: 50%;
+        padding: 7px 0;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        border-bottom: 2px solid $six-color;
+        &:nth-child(n):not(:first-child) {
+            margin-top: 30px;
+        }
+        &:focus {
+            border-bottom: 2px solid rgb(102, 102, 255);
+        }
+    }
+}
