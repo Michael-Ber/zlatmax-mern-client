@@ -5,7 +5,6 @@ import { Button } from '../../button/Button';
 import { useDispatch, useSelector } from 'react-redux';
 import { login, setShowModal } from '../../../redux/auth/authSlice';
 
-import { Modal } from '../../modal/Modal';
 
 
 import './loginPage.scss';
@@ -17,7 +16,7 @@ export const LoginPage = () => {
     
 
     const dispatch = useDispatch();
-    const { user, showModal, message } = useSelector(state => state.authSlice);
+    const { user } = useSelector(state => state.authSlice);
     const nav = useNavigate();
 
     const submitHandler = (e) => {
@@ -33,7 +32,7 @@ export const LoginPage = () => {
         if(user) {
             nav("/");
         }
-    }, [user])
+    }, [user, nav])
 
     return (
         <div className='login'>

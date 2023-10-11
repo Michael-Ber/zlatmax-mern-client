@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { getComments, addComment, removeComment } from '../../redux/comments/commentsSlice';
+import { addComment } from '../../redux/comments/commentsSlice';
 
 import './addComment.scss';
 
@@ -14,7 +14,6 @@ export const AddComment = ({setShowCommentForm, goodId}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(addComment({text: textVal, goodId}));
-        // dispatch(getComments(goodId));
         setTextVal('');
         setShowCommentForm(false);
     }

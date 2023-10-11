@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useEffect, memo } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { createPortal } from 'react-dom';
 
 import { Header } from "../header/Header";
 import { Footer } from "../footer/Footer";

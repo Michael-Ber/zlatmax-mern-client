@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { AddComment } from '../addComment/AddComment';
 import { AddReply } from '../addReply/AddReply';
 
-import { getComments, addComment, removeComment } from '../../redux/comments/commentsSlice';
+import { getComments, removeComment } from '../../redux/comments/commentsSlice';
 
 import Moment from 'react-moment';
 

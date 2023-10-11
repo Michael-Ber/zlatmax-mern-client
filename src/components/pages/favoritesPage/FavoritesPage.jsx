@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { Slide } from '../../slide/Slide';
-import { setProcess } from '../../../utils/setProcess';
 
 import './favoritesPage.scss'; 
 

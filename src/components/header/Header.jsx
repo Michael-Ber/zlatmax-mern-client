@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { logout, changeTotalSum, setSearchResult } from '../../redux/auth/authSlice';
-import { me } from '../../redux/auth/authSlice';
+import { logout, setSearchResult } from '../../redux/auth/authSlice';
 
 import './header.scss';
 

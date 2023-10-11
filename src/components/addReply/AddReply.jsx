@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { getComments, addComment, removeComment, replyAddComment } from '../../redux/comments/commentsSlice';
+import { getComments, addComment } from '../../redux/comments/commentsSlice';
 
 
 export const AddReply = ({setShowReplyForm, commentId, isReply, goodId}) => {

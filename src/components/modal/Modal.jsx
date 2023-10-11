@@ -1,4 +1,4 @@
-import React, { useEffect, memo } from 'react';
+import React, { useEffect, memo, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { setShowModal, resetingMessage as resetingMsgAuth } from '../../redux/auth/authSlice';
 import { resetingMessage as resetingMsgGoods } from '../../redux/goods/goodsSlice';
@@ -10,19 +10,21 @@ export const Modal = memo(({showModal, message}) => {
   const styles = showModal ? 
                   { visibility: 'visible', top: '50%', transform: 'translate(-50%, -50%)' } : 
                   { visibility: 'hidden', top: '0', transform: 'translate(-50%, -100%)' };
+  
+  const closeModal = useCallback(() => {
+    dispatch(setShowModal(false));
+    dispatch(resetingMsgAuth());
+    dispatch(resetingMsgGoods());
+  }, [dispatch])
 
   useEffect(() => {
     const timer = setTimeout(() => {
       closeModal();
     }, 30000)
     return () => clearTimeout(timer);
-  }, [showModal])
+  }, [showModal, closeModal])
 
-  const closeModal = () => {
-    dispatch(setShowModal(false));
-    dispatch(resetingMsgAuth());
-    dispatch(resetingMsgGoods());
-  }
+  
 
   const renderMsg = message.length > 0 && message.map(msg => {
     

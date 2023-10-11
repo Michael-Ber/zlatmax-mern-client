@@ -1,13 +1,10 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, {  useEffect} from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createPortal } from 'react-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { ControlledCard } from '../../input/ControlledCard';
 import { changeTotalSum, setShowModal, me } from '../../../redux/auth/authSlice';
 import { makeOrder, sendOrder } from '../../../redux/goods/goodsSlice';
 
-import { ErrorBoundary } from '../../errorBoundary/ErrorBoundary';
-import { Modal } from '../../modal/Modal';
 import { Spinner } from '../../spinner/Spinner';
 
 import './cartPage.scss';
@@ -15,7 +12,6 @@ import './cartPage.scss';
 export const CartPage = () => {
 
   const cart = useSelector(state => state.authSlice.user?.cort);
-  const { showModal } = useSelector(state => state.authSlice);
   const { message, isLoading } = useSelector(state => state.goodsSlice);
   const { order } = useSelector(state => state.goodsSlice);
   const dispatch = useDispatch();
